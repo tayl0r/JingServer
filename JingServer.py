@@ -12,7 +12,6 @@ class JingServer():
 
     def api(self):
 
-        print self.m_filename
         method = request.args.get('method', None)
         #self.m_app.logger.debug(method)
 
