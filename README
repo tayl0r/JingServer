@@ -1,1 +1,29 @@
 JingServer is an open source server for the Jing screenshot tool.
+
+Powered by:
+Python 2.x
+Flask
+
+Setup:
+JingServer should come with everything you need, including the python and flask environment.
+
+1) Make the uploads dir:
+>> mkdir uploads
+>> chmod 777 uploads
+
+2) Run this to setup the virtual environment (might require Python virtualenv):
+>> . env/bin/activate
+
+3) Then you should be able to run:
+>> python main.py
+You should have a working jing server.
+
+4) Edit your hosts file and redirect www.screencast.com to the IP of this jing server.
+
+
+Todo:
+1) setup caching and store the username & filename in the cache, keyed by the auth code & media set id
+2) use the cached data for the filename instead of storing it as a class variable (would also to organize files by username & date)
+
+
+I'm not going to write any code that lets you browse the uploaded files because other projects exist that specifically do that.
