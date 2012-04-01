@@ -128,13 +128,13 @@ class JingServer():
         # authCode	3d061381-6b17-499e-8ea0-c119fbe12468
         # apiKey	800bbfc9-928b-4490-904f-adab687ea4de
         # fileData	fileData
-        if request.method == 'POST' and method == None:
+        if request.method == 'POST' and method is None:
             method = request.form['method']
             #self.m_app.logger.debug(method)
             if method == "Screencast.Upload.AppendData":
                 #filename = session['filename']
                 upload = request.files['fileData']
-                f = open(m_uploadsDir + self.m_filename, 'a')
+                f = open(self.m_uploadsDir + self.m_filename, 'a')
                 bytes = upload.read()
                 f.write(bytes)
                 self.m_app.logger.debug("added {} bytes to file {}".format(len(bytes), self.m_filename))
